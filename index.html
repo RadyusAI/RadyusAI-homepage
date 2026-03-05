@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="RADYUS AI — Enterprise commercialization for robotics and emerging technology." />
+  <title>RADYUS AI — Commercialization for Robotics & Emerging Tech</title>
+
+  <style>
+    :root{
+      --bg: #070A12;
+      --bg2:#0B1020;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --text:#EAF0FF;
+      --muted: rgba(234,240,255,.72);
+      --faint: rgba(234,240,255,.54);
+      --line: rgba(234,240,255,.14);
+      --shadow: 0 14px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+
+      --accent: #7C5CFF;
+      --accent2:#35D7FF;
+      --accent3:#5CFFB1;
+
+      --max: 1120px;
+      --pad: clamp(18px, 3vw, 28px);
+      --h1: clamp(36px, 5vw, 56px);
+      --h2: clamp(24px, 3.2vw, 34px);
+      --h3: clamp(18px, 2.3vw, 22px);
+      --p:  clamp(15px, 1.3vw, 17px);
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1000px 600px at 18% 5%, rgba(124,92,255,.18), transparent 55%),
+                  radial-gradient(900px 560px at 78% 12%, rgba(53,215,255,.16), transparent 55%),
+                  radial-gradient(900px 600px at 60% 92%, rgba(92,255,177,.10), transparent 55%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
+      color: var(--text);
+      line-height:1.55;
+    }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 2*var(--pad))); margin-inline:auto; }
+
+    /* Subtle grid overlay */
+    .grid{
+      position:fixed; inset:0; pointer-events:none; opacity:.22;
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: radial-gradient(500px 300px at 30% 10%, black 45%, transparent 70%);
+      z-index:0;
+    }
+
+    /* Navbar */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.55);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px var(--pad);
+      width:min(var(--max), 100%);
+      margin-inline:auto;
+      gap:12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width: 190px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:700;
+      font-size:13px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius: 12px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(53,215,255,.95), transparent 60%),
+        radial-gradient(12px 12px at 70% 70%, rgba(124,92,255,.92), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .nav-links{
+      display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+      justify-content:center;
+    }
+    .nav-links a{
+      color: var(--muted);
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all .18s ease;
+    }
+    .nav-links a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .nav-cta{
+      display:flex; gap:10px; align-items:center; justify-content:flex-end;
+      min-width: 210px;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 650;
+      letter-spacing:.01em;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.primary{
+      border-color: rgba(124,92,255,.35);
+      background:
+        linear-gradient(135deg, rgba(124,92,255,.92), rgba(53,215,255,.72));
+      box-shadow: 0 18px 40px rgba(124,92,255,.22);
+      color: #0B1020;
+    }
+    .btn.primary:hover{ transform: translateY(-1px) scale(1.01); }
+    .btn .dot{
+      width:9px; height:9px; border-radius:99px;
+      background: rgba(11,16,32,.85);
+      box-shadow: 0 0 0 3px rgba(255,255,255,.25) inset;
+    }
+
+    /* Sections */
+    section{
+      position:relative;
+      z-index:1;
+      padding: 82px 0;
+      scroll-margin-top: 88px;
+    }
+    .section-head{
+      margin-bottom: 22px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
+      flex-wrap:wrap;
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      color: rgba(234,240,255,.78);
+      font-size: 12px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    .kicker .pill{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+    }
+    h1{ font-size: var(--h1); line-height:1.05; margin: 12px 0 12px; letter-spacing:-.03em; }
+    h2{ font-size: var(--h2); margin: 0; letter-spacing:-.02em; }
+    h3{ font-size: var(--h3); margin: 0 0 10px; letter-spacing:-.01em; }
+    p{ font-size: var(--p); margin: 0 0 14px; color: var(--muted); }
+    .lead{ font-size: clamp(16px, 1.6vw, 18px); color: rgba(234,240,255,.80); max-width: 70ch; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .card-inner{ padding: clamp(18px, 2.6vw, 26px); }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    .three{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .muted{ color: var(--muted); }
+    .fine{ color: var(--faint); font-size: 12.5px; }
+    .divider{ height:1px; background: rgba(255,255,255,.12); margin: 18px 0; }
+
+    /* Hero */
+    .hero{
+      padding-top: 54px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+    .hero-card{
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute; inset:-1px;
+      background:
+        radial-gradient(600px 280px at 22% 20%, rgba(124,92,255,.35), transparent 60%),
+        radial-gradient(600px 280px at 72% 20%, rgba(53,215,255,.25), transparent 60%),
+        radial-gradient(620px 360px at 60% 92%, rgba(92,255,177,.20), transparent 60%);
+      opacity:.75;
+      pointer-events:none;
+    }
+    .hero-card .card-inner{ position:relative; }
+    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top: 18px; }
+    .micro{
+      display:flex; gap:10px; flex-wrap:wrap; margin-top: 18px;
+    }
+    .micro span{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: rgba(234,240,255,.78);
+      font-size: 12.5px;
+    }
+
+    /* Side panel */
+    .panel{
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap: 14px;
+    }
+    .panel .stat{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .stat .box{
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding: 12px 12px;
+      min-height: 86px;
+    }
+    .stat .big{
+      font-size: 22px;
+      letter-spacing:-.02em;
+      font-weight: 750;
+      color: rgba(234,240,255,.92);
+      margin-bottom: 2px;
+    }
+
+    /* Callout */
+    .callout{
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(420px 220px at 12% 22%, rgba(124,92,255,.22), transparent 55%),
+        radial-gradient(420px 220px at 86% 22%, rgba(53,215,255,.16), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      padding: 18px 18px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 56px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.12);
+    }
+    .footer-inner{
+      display:flex; align-items:flex-start; justify-content:space-between;
+      gap: 14px;
+      flex-wrap:wrap;
+    }
+    .small-links{ display:flex; gap:14px; flex-wrap:wrap; }
+    .small-links a{
+      color: rgba(234,240,255,.70);
+      font-size: 13px;
+      padding: 6px 8px;
+      border-radius: 10px;
+      border:1px solid transparent;
+    }
+    .small-links a:hover{
+      color: rgba(234,240,255,.92);
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero-grid, .two-col{ grid-template-columns: 1fr; }
+      .nav-inner{ gap: 10px; }
+      .nav-cta{ min-width: unset; }
+    }
+    @media (max-width: 720px){
+      .nav-links{ display:none; }
+      section{ padding: 66px 0; }
+      .three{ grid-template-columns: 1fr; }
+      .brand{ min-width: unset; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="RADYUS AI home">
+        <span class="logo" aria-hidden="true"></span>
+        <span>RADYUS AI</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#home">HOME</a>
+        <a href="#approach">APPROACH</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn primary" href="#contact">
+          <span class="dot" aria-hidden="true"></span>
+          Book an Intro
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <section id="home" class="hero">
+    <div class="wrap hero-grid">
+      <div class="card hero-card">
+        <div class="card-inner">
+          <div class="kicker">
+            <span class="pill">Robotics</span>
+            <span class="pill">Embodied AI</span>
+            <span class="pill">Enterprise GTM</span>
+          </div>
+
+          <h1>Enterprise commercialization for robotics and emerging technology.</h1>
+
+          <p class="lead">
+            Radyus AI partners with robotics and emerging technology companies at key commercial inflection points,
+            bringing strategic clarity and hands-on enterprise execution to help them scale with intention.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#contact"><span class="dot" aria-hidden="true"></span>Book an Intro Conversation</a>
+            <a class="btn" href="#approach">Explore the Approach</a>
+          </div>
+
+          <div class="micro" aria-label="Highlights">
+            <span>Principal-led partnership</span>
+            <span>Pilot-to-production pathways</span>
+            <span>Enterprise narrative + execution</span>
+            <span>Partnership & ecosystem access</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="card-inner panel">
+          <div>
+            <h3>Built for meaningful growth moments</h3>
+            <p>
+              Radyus AI supports companies navigating pivotal commercial transitions, from emerging out of stealth
+              to scaling enterprise revenue and entering new markets.
+            </p>
+            <div class="divider"></div>
+            <p class="fine">
+              Engagements often begin when traction must become repeatable, when enterprise motion expands beyond
+              founder-led sales, or when pilots must convert into scalable deployment.
+            </p>
+          </div>
+
+          <div class="stat" aria-label="Focus areas">
+            <div class="box">
+              <div class="big">Clarity</div>
+              <div class="fine">Market focus • ICP • buyer mapping • positioning</div>
+            </div>
+            <div class="box">
+              <div class="big">Execution</div>
+              <div class="fine">Live deals • enterprise cycles • deal structure</div>
+            </div>
+            <div class="box">
+              <div class="big">Repeatability</div>
+              <div class="fine">Pipeline • pilots • conversion • playbooks</div>
+            </div>
+            <div class="box">
+              <div class="big">Ecosystem</div>
+              <div class="fine">Partners • channels • deployment pathways</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker"><span class="pill">Approach</span></div>
+          <h2>Commercializing technology in the physical world</h2>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-inner">
+            <h3>Built for meaningful growth moments</h3>
+            <p>
+              Radyus AI supports companies navigating pivotal commercial transitions, from emerging out of stealth
+              to scaling enterprise revenue and entering new markets.
+            </p>
+            <p>
+              Engagements often begin when traction must become repeatable, when enterprise motion expands beyond
+              founder-led sales, or when pilots must convert into scalable deployment. They also arise as market
+              focus sharpens, partnerships deepen, and complex technology requires a stronger enterprise narrative.
+            </p>
+            <p><strong class="muted">Growth changes the commercial equation. Clarity turns momentum into scale.</strong></p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>Operating realities</h3>
+            <p>
+              For companies operating in the physical world, including robotics, embodied AI, and hardware-enabled
+              systems, commercialization carries added complexity.
+            </p>
+            <p>
+              Deployments unfold in real-world environments where reliability, operational integration, and
+              multi-stakeholder enterprise dynamics directly shape outcomes. Enterprise adoption requires operational
+              readiness, disciplined pilot-to-production pathways, alignment between executive sponsors and field
+              operators, and the right ecosystem partners.
+            </p>
+            <p>
+              Radyus AI operates with a practical understanding of this complexity, helping companies align technical
+              capability with real-world execution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="height:16px"></div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="section-head" style="margin-bottom:10px;">
+            <h3>How I partner</h3>
+            <div class="kicker"><span class="pill">Principal-led</span> <span class="pill">Hands-on</span></div>
+          </div>
+
+          <p><strong class="muted">Commercial scale requires intention.</strong></p>
+          <p>
+            I begin by understanding how your commercialization engine truly operates across pipeline, pilots, buyers,
+            and market focus.
+          </p>
+          <p>
+            From there, I design practical commercialization frameworks that bring clarity and repeatability to
+            enterprise motion without slowing momentum.
+          </p>
+          <p>
+            Execution remains central. I engage directly in enterprise sales cycles and strategic deal structuring,
+            support live deals, sharpen the enterprise narrative, and expand commercial reach through partnerships
+            and market access.
+          </p>
+
+          <div class="divider"></div>
+
+          <div class="callout">
+            <h3 style="margin-bottom:6px;">Why Radyus</h3>
+            <p>
+              Radyus was founded on the idea that meaningful growth happens when a company extends its radius into new
+              markets, strategic partnerships, and scalable enterprise growth.
+            </p>
+            <p>
+              Expanding thoughtfully requires clarity, execution, and ecosystem alignment. Radyus AI brings together
+              commercial architecture, enterprise execution, physical-world depth, and strategic connectivity, delivered
+              through direct, principal-led partnership.
+            </p>
+            <a class="btn primary" href="#contact" style="margin-top:8px;">
+              <span class="dot" aria-hidden="true"></span>Start a Conversation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker"><span class="pill">ABOUT</span></div>
+          <h2>About Radyus AI</h2>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="card">
+          <div class="card-inner">
+            <p>
+              Radyus AI is a principal-led commercialization practice focused on robotics and emerging technology
+              operating in complex, real-world environments.
+            </p>
+            <p>
+              I work directly with founders and leadership teams at pivotal commercial inflection points, helping
+              translate technical innovation into enterprise revenue, strategic partnerships, and scalable growth.
+            </p>
+            <p>
+              My experience spans over two decades across robotics, physical AI, and emerging technology platforms,
+              grounded in direct enterprise sales cycles, pilot-to-production expansion, and strategic ecosystem
+              development.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner">
+            <h3>How the practice is structured</h3>
+            <p>
+              Radyus AI is intentionally structured as a focused, high-engagement practice. Clients work directly with
+              me, not through layers of delegation, with clarity, commercial judgment, and long-term trajectory in mind.
+            </p>
+
+            <div class="divider"></div>
+
+            <div class="three" aria-label="Working principles">
+              <div class="callout">
+                <h3 style="margin-bottom:6px;">Clarity</h3>
+                <p class="fine">Enterprise narrative, ICP, and market focus that align with reality.</p>
+              </div>
+              <div class="callout">
+                <h3 style="margin-bottom:6px;">Repeatability</h3>
+                <p class="fine">Frameworks that turn momentum into an enterprise-ready commercial engine.</p>
+              </div>
+              <div class="callout">
+                <h3 style="margin-bottom:6px;">Execution</h3>
+                <p class="fine">Hands-on support in live cycles, deals, and partner pathways.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="kicker"><span class="pill">CONTACT</span></div>
+          <h2>Expand your commercial radius</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="two-col">
+            <div>
+              <p class="lead">
+                If you are navigating a meaningful commercial inflection point and are ready to scale with clarity and
+                intention, let’s connect.
+              </p>
+
+              <div class="hero-actions" style="margin-top:14px;">
+                <a class="btn primary" href="mailto:your@email.com?subject=Intro%20Conversation%20-%20RADYUS%20AI">
+                  <span class="dot" aria-hidden="true"></span>Book an Intro Conversation
+                </a>
+                <a class="btn" href="#approach">Explore the Approach</a>
+              </div>
+
+              <div class="divider"></div>
+
+              <p class="fine">
+                Email: <a href="mailto:your@email.com" style="text-decoration:underline; text-underline-offset:3px;">your@email.com</a><br/>
+                LinkedIn: <a href="https://www.linkedin.com/in/your-link/" target="_blank" rel="noreferrer"
+                  style="text-decoration:underline; text-underline-offset:3px;">https://www.linkedin.com/in/your-link/</a>
+              </p>
+            </div>
+
+            <div class="callout">
+              <h3 style="margin-bottom:6px;">A simple starting point</h3>
+              <p class="fine" style="margin-bottom:10px;">
+                In an intro conversation, we’ll focus on where your commercialization motion is working, where it’s
+                straining, and what needs to become repeatable next.
+              </p>
+
+              <div class="divider"></div>
+
+              <p class="fine" style="margin-bottom:12px;">
+                Typical areas we’ll pressure-test:
+              </p>
+
+              <ul class="fine" style="margin:0; padding-left: 18px; color: rgba(234,240,255,.70);">
+                <li>Pipeline health and enterprise buyer dynamics</li>
+                <li>Pilot conversion and operational readiness</li>
+                <li>Market focus, positioning, and narrative strength</li>
+                <li>Deal structure, partners, and deployment pathways</li>
+              </ul>
+
+              <a class="btn" href="#home" style="margin-top:14px;">Back to Top</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="brand" style="opacity:.92;">
+        <span class="logo" aria-hidden="true"></span>
+        <span>RADYUS AI</span>
+      </div>
+
+      <div class="small-links" aria-label="Footer">
+        <a href="#home">Home</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="fine">© <span id="year"></span> RADYUS AI. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Optional: close-to-native smooth offset on focus jumps (mobile)
+    // (No menu toggle needed; keep single-file simple.)
+  </script>
+</body>
+</html>
