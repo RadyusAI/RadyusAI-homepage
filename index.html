@@ -105,17 +105,19 @@
       box-shadow: none;
     }
 
-    .hero {
+.hero {
       position: relative;
       padding: 7rem 0 5rem;
       min-height: 72vh;
       overflow: hidden;
       display: flex;
       align-items: center;
-      background:
-        radial-gradient(circle at 85% 20%, rgba(185, 122, 86, 0.14), transparent 20%),
-        radial-gradient(circle at 12% 18%, rgba(220, 232, 225, 0.58), transparent 26%),
-        linear-gradient(180deg, #f7f4ee 0%, #fcfcfa 58%, #fbfaf7 100%);
+      /* Add these three lines instead */
+      background-image:
+        linear-gradient(to bottom, rgba(252, 252, 250, 0.96), rgba(252, 252, 250, 0.85)), /* Adds a soft overlay */
+        url('radyus skyline.jpeg'); /* Point to your uploaded image file */
+      background-size: cover; /* Ensures the image fills the space */
+      background-position: center; /* Centers the image */
     }
 
     .hero-panel {
