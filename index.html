@@ -105,6 +105,7 @@
       box-shadow: none;
     }
 
+    /* REFINED HERO CSS */
     .hero {
       position: relative;
       padding: 7rem 0 5rem;
@@ -112,10 +113,11 @@
       overflow: hidden;
       display: flex;
       align-items: center;
-      /* Notice the update here: The url() points to your exact filename */
+      
+      /* NEW OVERLAY: Darker slate-blue overlay makes the image much more visible */
       background-image:
-        linear-gradient(to bottom, rgba(252, 252, 250, 0.45), rgba(252, 252, 250, 0.25)), 
-        url('Photoroom_20251210_083243.jpeg'); /* Perfect, exact filename match */
+        linear-gradient(to bottom, rgba(41, 51, 61, 0.65), rgba(41, 51, 61, 0.45)), 
+        url('Photoroom_20251210_083243.jpeg'); /* Your background filename is correct here */
       
       background-size: cover;
       background-position: center;
@@ -151,20 +153,23 @@
 
     h1, h2, h3, p { margin: 0; }
 
+    /* REFINED TITLE (H1): Soft Gold-White color makes it pop against the image */
     h1 {
       max-width: 11ch;
       font-size: clamp(2.85rem, 7vw, 5rem);
       line-height: 0.95;
       letter-spacing: -0.05em;
       font-weight: 700;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+      color: #eae1d6; /* Soft, warm light gray/gold-white */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25); /* More depth shadow for contrast */
     }
 
+    /* REFINED SUBTITLE: Pure White for maximum readability */
     .hero-copy {
       margin-top: 1.5rem;
       max-width: 720px;
       font-size: 1.12rem;
-      color: rgba(22, 22, 22, 0.82);
+      color: rgba(255, 255, 255, 0.95); /* High-contrast white */
     }
 
     .hero-actions {
@@ -601,7 +606,7 @@
               <div class="about-layout">
                 <div class="profile-card">
                   <div class="profile-photo" aria-label="Photo of Jessica Radow">
-                    <img src="https://i.imgur.com/8QeR84t.png" alt="Jessica Radow" class="rounded-circle">
+                    <img src="Photoroom_20251210_083243.jpeg" alt="Jessica Radow" class="rounded-circle">
                   </div>
                   <div class="profile-name">Jessica Radow</div>
                   <div class="profile-role">Founder, Radyus AI</div>
