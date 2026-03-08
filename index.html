@@ -3,39 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radyus AI</title>
-  <meta name="description" content="Radyus AI partners with robotics, Physical AI, and emerging technology companies at key commercial inflection points to help them scale with clarity and intention." />
+  <title>Radyus</title>
+  <meta name="description" content="Radyus helps robotics, physical AI, and emerging technology companies strengthen go-to-market strategy, enterprise sales, and partnerships." />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
     :root {
-      --bg: #fcfcfa;
-      --bg-alt: #f4f1eb;
-      --bg-soft: #f8f6f2;
-      --card: rgba(255, 255, 255, 0.78);
-      --text: #161616;
-      --muted: #5f625d;
-      --line: rgba(56, 64, 52, 0.12);
-      --accent: #2f5d50;
-      --accent-soft: #dce8e1;
-      --warm: #b97a56;
+      --bg: #f7f4ee;
+      --bg-soft: #fbf9f5;
+      --card: rgba(255, 255, 255, 0.86);
+      --text: #18211d;
+      --muted: #56625c;
+      --line: rgba(34, 49, 42, 0.10);
+      --accent: #264f45;
+      --accent-soft: rgba(38, 79, 69, 0.10);
+      --warm: #b98562;
       --max: 1120px;
-      --radius: 18px;
-      --shadow: 0 16px 40px rgba(35, 45, 35, 0.07);
+      --radius: 20px;
+      --shadow: 0 18px 40px rgba(29, 39, 33, 0.07);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(220, 232, 225, 0.42), transparent 28%),
-        linear-gradient(180deg, #fcfcfa 0%, #fbfaf7 100%);
-      line-height: 1.6;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
+    h1, h2, h3, p { margin: 0; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
@@ -49,8 +50,8 @@
       top: 0;
       z-index: 50;
       backdrop-filter: blur(12px);
-      background: rgba(252, 252, 250, 0.82);
-      border-bottom: 1px solid rgba(56, 64, 52, 0.08);
+      background: rgba(247, 244, 238, 0.72);
+      border-bottom: 1px solid rgba(34, 49, 42, 0.08);
     }
 
     .nav {
@@ -62,9 +63,9 @@
     }
 
     .brand {
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
     }
 
@@ -72,8 +73,9 @@
       display: flex;
       gap: 1.5rem;
       align-items: center;
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       color: var(--muted);
+      font-weight: 600;
     }
 
     .nav-links a:hover { color: var(--accent); }
@@ -82,243 +84,206 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0.9rem 1.25rem;
+      padding: 0.92rem 1.3rem;
       border-radius: 999px;
       background: var(--accent);
       color: #fff;
-      font-weight: 600;
+      font-weight: 700;
       border: 1px solid var(--accent);
-      transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
-      box-shadow: 0 14px 32px rgba(47, 93, 80, 0.18);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      box-shadow: 0 14px 28px rgba(38, 79, 69, 0.18);
     }
 
     .button:hover {
       transform: translateY(-1px);
-      opacity: 0.97;
-      box-shadow: 0 18px 36px rgba(47, 93, 80, 0.24);
+      box-shadow: 0 18px 34px rgba(38, 79, 69, 0.24);
+      opacity: 0.98;
     }
 
     .button.secondary {
-      background: rgba(255, 255, 255, 0.64);
+      background: rgba(255, 255, 255, 0.72);
       color: var(--text);
-      border-color: rgba(56, 64, 52, 0.1);
+      border-color: rgba(34, 49, 42, 0.10);
       box-shadow: none;
     }
 
-    /* REFINED HERO CSS */
     .hero {
       position: relative;
-      padding: 7rem 0 5rem;
-      min-height: 72vh;
-      overflow: hidden;
+      min-height: 76vh;
       display: flex;
       align-items: center;
-      
-      /* NEW OVERLAY: Darker slate-blue overlay makes the image much more visible */
-      background-image:
-        linear-gradient(to bottom, rgba(41, 51, 61, 0.65), rgba(41, 51, 61, 0.45)), 
-        url('Photoroom_20251210_083243.jpeg'); /* Your background filename is correct here */
-      
-      background-size: cover;
-      background-position: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(20, 28, 24, 0.72) 0%, rgba(20, 28, 24, 0.48) 38%, rgba(20, 28, 24, 0.36) 100%),
+        linear-gradient(180deg, rgba(20, 28, 24, 0.18) 0%, rgba(20, 28, 24, 0.28) 65%, rgba(20, 28, 24, 0.52) 100%),
+        url('images/radyus skyline.jpeg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 120px;
+      background: linear-gradient(180deg, rgba(247,244,238,0) 0%, rgba(247,244,238,0.92) 100%);
+      pointer-events: none;
     }
 
     .hero-panel {
       position: relative;
-      z-index: 2;
-      padding: 2.5rem 0 1.25rem;
+      z-index: 1;
+      padding: 7rem 0 5rem;
+      max-width: 760px;
     }
 
     .hero-panel::after {
       content: "";
       position: absolute;
-      right: 4%;
-      top: 0.5rem;
+      right: -2rem;
+      top: 2rem;
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(185, 122, 86, 0.14) 0%, rgba(185, 122, 86, 0) 68%);
+      background: radial-gradient(circle, rgba(185, 133, 98, 0.18) 0%, rgba(185, 133, 98, 0) 68%);
       pointer-events: none;
     }
 
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 1.1rem;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-
-    h1, h2, h3, p { margin: 0; }
-
-    /* REFINED TITLE (H1): Soft Gold-White color makes it pop against the image */
     h1 {
-      max-width: 11ch;
-      font-size: clamp(2.85rem, 7vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
+      max-width: 13ch;
+      font-size: clamp(2.35rem, 5.3vw, 4.1rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
       font-weight: 700;
-      color: #eae1d6; /* Soft, warm light gray/gold-white */
-      text-shadow: 0 2px 4px rgba(0,0,0,0.25); /* More depth shadow for contrast */
+      color: #f8f6f1;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
     }
 
-    /* REFINED SUBTITLE: Pure White for maximum readability */
+    .nowrap { white-space: nowrap; }
+
     .hero-copy {
-      margin-top: 1.5rem;
-      max-width: 720px;
-      font-size: 1.12rem;
-      color: rgba(255, 255, 255, 0.95); /* High-contrast white */
+      margin-top: 1.3rem;
+      max-width: 680px;
+      font-size: 1.03rem;
+      line-height: 1.74;
+      color: rgba(248, 246, 241, 0.92);
+      font-weight: 500;
     }
 
     .hero-actions {
-      margin-top: 2rem;
+      margin-top: 1.9rem;
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
     }
 
-    .section {
-      padding: 1.4rem 0;
-      border-top: 0;
-    }
+    .section-stack { padding-bottom: 2rem; }
+    .section { padding: 1.4rem 0; }
+    .section-stack .section:nth-child(1) { margin-top: 0.35rem; }
+    .section-stack .section:nth-child(2) { margin-top: 2rem; }
+    .section-stack .section:nth-child(3) { margin-top: 1.1rem; }
+    .section-stack .section:nth-child(4) { margin-top: 2.2rem; }
 
     .section-wrap {
       position: relative;
       border: 1px solid var(--line);
       border-radius: 28px;
       padding: 2.4rem;
-      background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.7));
+      background: linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.76));
       box-shadow: var(--shadow);
       overflow: hidden;
-    }
-
-    .section-wrap.compact {
-      max-width: 760px;
-    }
-
-    .section-wrap.wide {
-      max-width: 980px;
-    }
-
-    .section-wrap.center {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section-wrap.float-left {
-      margin-right: auto;
-    }
-
-    .section-wrap.float-right {
-      margin-left: auto;
     }
 
     .section-wrap::before {
       content: "";
       position: absolute;
       inset: 0 auto 0 0;
-      width: 5px;
-      background: linear-gradient(180deg, var(--accent), rgba(185, 122, 86, 0.65));
-      opacity: 0.9;
+      width: 4px;
+      background: linear-gradient(180deg, var(--accent), rgba(185, 133, 98, 0.75));
+      opacity: 0.95;
     }
 
     .section.alt .section-wrap {
-      background: linear-gradient(180deg, rgba(244, 241, 235, 0.92), rgba(255, 255, 255, 0.78));
+      background: linear-gradient(180deg, rgba(244, 240, 233, 0.95), rgba(255, 255, 255, 0.80));
     }
 
-    .section-grid {
-      display: block;
+    .section-wrap.compact { max-width: 760px; }
+    .section-wrap.wide { max-width: 980px; }
+    .section-wrap.center { margin-left: auto; margin-right: auto; }
+    .section-wrap.float-left { margin-right: auto; }
+    .section-wrap.float-right { margin-left: auto; }
+
+    .section-grid { display: block; }
+
+    .section-title {
+      margin-bottom: 0.8rem;
+      font-size: 1.32rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
     }
+
+    .lead {
+      font-size: 1rem;
+      line-height: 1.72;
+      margin-bottom: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .section-content p { max-width: 68ch; }
+    .section-content p + p { margin-top: 1rem; }
 
     .text-columns {
       column-count: 2;
       column-gap: 2rem;
+      margin-top: 1rem;
     }
 
-    .text-columns p {
-      break-inside: avoid;
-    }
+    .text-columns p { break-inside: avoid; }
 
-    .mini-highlight {
-      margin-top: 1.4rem;
-      padding: 1rem 1.1rem;
-      border-radius: 16px;
-      background: rgba(220, 232, 225, 0.42);
-      border: 1px solid rgba(47, 93, 80, 0.08);
-      font-weight: 600;
-      color: var(--accent);
-    }
-
-    .split-band {
+    .services-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.5rem;
-      align-items: start;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.2rem;
     }
 
-    .note-card {
-      padding: 1.25rem;
+    .service-item {
+      position: static;
+      width: auto;
+      padding: 1.1rem 1.15rem;
+      transform: none;
       border-radius: 18px;
-      background: rgba(255,255,255,0.62);
-      border: 1px solid rgba(56, 64, 52, 0.08);
+      background: rgba(255,255,255,0.80);
+      border: 1px solid rgba(34, 49, 42, 0.08);
+      text-align: left;
+      box-shadow: 0 10px 22px rgba(29, 39, 33, 0.05);
     }
 
-    .note-card .label {
-      margin-bottom: 0.6rem;
+    .service-item h3 {
+      font-size: 0.96rem;
+      font-weight: 800;
+      margin: 0 0 0.42rem;
+      color: var(--text);
+      letter-spacing: -0.01em;
     }
 
-    .section-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    .section-content {
-      max-width: 760px;
-    }
-
-    .section-content p + p {
-      margin-top: 1.25rem;
-    }
-
-    .lead {
-      font-size: 1.5rem;
-      line-height: 1.25;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.2rem;
-    }
-
-    .closing-line {
-      margin-top: 1.4rem;
-      font-size: 1.08rem;
-      font-weight: 600;
-      letter-spacing: -0.02em;
-      color: var(--accent);
-    }
-
-    .offset-left {
-      margin-left: -1.75rem;
-    }
-
-    .offset-right {
-      margin-right: -1.75rem;
+    .service-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.90rem;
     }
 
     .about-layout {
       display: grid;
-      grid-template-columns: 220px minmax(0, 1fr);
+      grid-template-columns: 240px minmax(0, 1fr);
       gap: 1.5rem;
       align-items: start;
     }
 
     .profile-card {
-      background: linear-gradient(180deg, rgba(220, 232, 225, 0.7), rgba(255, 255, 255, 0.78));
-      border: 1px solid rgba(56, 64, 52, 0.08);
+      background: linear-gradient(180deg, rgba(233, 240, 235, 0.72), rgba(255, 255, 255, 0.84));
+      border: 1px solid rgba(34, 49, 42, 0.08);
       border-radius: 22px;
       padding: 1rem;
       text-align: center;
@@ -326,27 +291,28 @@
 
     .profile-photo {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 5;
       border-radius: 18px;
-      border: 1px solid rgba(56, 64, 52, 0.08);
+      border: 1px solid rgba(34, 49, 42, 0.08);
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(220, 232, 225, 0.95), rgba(244, 241, 235, 0.95));
+      background: linear-gradient(135deg, rgba(233, 240, 235, 0.95), rgba(244, 240, 233, 0.95));
     }
 
     .profile-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
       display: block;
     }
 
     .profile-name {
       margin-top: 0.85rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .profile-role {
-      margin-top: 0.2rem;
+      margin-top: 0.18rem;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -357,22 +323,21 @@
       align-items: center;
       justify-content: center;
       width: 100%;
-      padding: 0.75rem 0.9rem;
+      padding: 0.78rem 0.95rem;
       border-radius: 999px;
-      border: 1px solid rgba(56, 64, 52, 0.1);
-      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(34, 49, 42, 0.10);
+      background: rgba(255,255,255,0.82);
       color: var(--accent);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .about-card,
     .contact-card {
       background: var(--card);
       backdrop-filter: blur(6px);
-      border: 1px solid rgba(56, 64, 52, 0.08);
+      border: 1px solid rgba(34, 49, 42, 0.08);
       border-radius: var(--radius);
       padding: 1.5rem;
-      box-shadow: none;
     }
 
     .contact-list {
@@ -381,50 +346,20 @@
       gap: 1rem;
     }
 
+    .label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+    }
+
     .contact-list a:hover,
     .profile-link:hover {
       text-decoration: underline;
       text-underline-offset: 0.18em;
-    }
-
-    .label {
-      display: block;
-      margin-bottom: 0.25rem;
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 700;
-    }
-
-    .footer {
-      padding: 2.5rem 0 3rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .section-stack {
-      padding-bottom: 2rem;
-    }
-
-    .section-stack .section:nth-child(1) {
-      margin-top: 0.25rem;
-    }
-
-    .section-stack .section:nth-child(2) {
-      margin-top: 2.5rem;
-    }
-
-    .section-stack .section:nth-child(3) {
-      margin-top: 1.2rem;
-    }
-
-    .section-stack .section:nth-child(4) {
-      margin-top: 3rem;
-    }
-
-    .section-stack .section:nth-child(5) {
-      margin-top: 1.6rem;
     }
 
     .footer {
@@ -434,30 +369,31 @@
     }
 
     @media (max-width: 980px) {
-      .offset-left,
-      .offset-right {
-        margin-left: 0;
-        margin-right: 0;
+      .about-layout {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 900px) {
       .text-columns {
         column-count: 1;
       }
 
-      .split-band {
+      .services-grid {
         grid-template-columns: 1fr;
+      }
+
+      .section-wrap.compact,
+      .section-wrap.wide {
+        max-width: none;
       }
 
       .section-stack .section:nth-child(n) {
-        margin-top: 0.75rem;
+        margin-top: 0.9rem;
       }
+    }
 
-      .about-layout {
-        grid-template-columns: 1fr;
-      }
-
+    @media (max-width: 840px) {
       .nav {
         flex-wrap: wrap;
       }
@@ -470,29 +406,28 @@
         padding-bottom: 0.25rem;
       }
 
-      .section-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
       .section-wrap {
         padding: 1.6rem;
         border-radius: 22px;
       }
 
       .hero {
-        padding: 5.5rem 0 3.5rem;
-        min-height: 60vh;
+        min-height: 64vh;
+        background-position: 62% center;
       }
 
-      .lead {
-        font-size: 1.28rem;
+      .hero-panel {
+        padding: 5.75rem 0 3.75rem;
+      }
+
+      h1 {
+        font-size: clamp(2.05rem, 8.8vw, 3.2rem);
       }
 
       .hero-panel::after {
         width: 120px;
         height: 120px;
-        right: 0;
+        right: -1rem;
       }
     }
   </style>
@@ -500,10 +435,11 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand">Radyus AI</a>
+      <a href="#top" class="brand">Radyus</a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#home">Home</a>
-        <a href="#growth">Approach</a>
+        <a href="#growth">Why Radyus</a>
+        <a href="#partners">Approach</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -513,9 +449,9 @@
   <main id="top">
     <section class="hero" id="home">
       <div class="container hero-panel">
-        <h1>Commercializing Physical AI and emerging technologies.</h1>
+        <h1>Scaling <span class="nowrap">physical AI</span> and emerging technologies</h1>
         <p class="hero-copy">
-          Radyus AI partners with robotics, Physical AI, and emerging technology companies at key commercial inflection points, bringing strategic clarity and hands-on enterprise execution to help them scale with intention.
+          Radyus helps robotics, physical AI, and emerging technology companies strengthen go-to-market strategy, enterprise sales, and partnerships.
         </p>
         <div class="hero-actions">
           <a class="button" href="#contact">Book an Intro Conversation</a>
@@ -524,140 +460,123 @@
     </section>
 
     <div class="section-stack">
-    <section class="section alt" id="growth">
-      <div class="container">
-        <div class="section-wrap wide float-right">
-          <div class="section-grid">
-            <div class="section-content">
-              <div class="section-title">Built for Meaningful Growth Moments</div>
-              <p class="lead">Radyus AI supports companies navigating pivotal commercial transitions, from emerging out of stealth to scaling enterprise revenue and entering new markets.</p>
-              <div class="text-columns">
-                <p>Engagements often begin when traction must become repeatable, when enterprise motion expands beyond founder-led sales, or when pilots must convert into scalable deployment.</p>
-                <p>They also arise as market focus sharpens, partnerships deepen, and complex technology requires a stronger enterprise narrative.</p>
-              </div>
-              <p class="mini-highlight">Growth changes the commercial equation. Clarity turns momentum into scale.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="physical-ai">
-      <div class="container">
-        <div class="section-wrap compact float-left">
-          <div class="section-grid">
-            <div class="section-title">Commercializing Technology in the Physical World</div>
-            <div class="section-content">
-              <p class="lead">For companies building Physical AI systems, including robotics, embodied AI, and hardware-enabled platforms, commercialization carries added complexity.</p>
-              <p>Deployments unfold in real-world environments where reliability, operational integration, and multi-stakeholder enterprise dynamics shape outcomes.</p>
-              <p>Enterprise adoption requires operational readiness, disciplined pilot-to-production pathways, alignment between executive sponsors and field operators, and the right ecosystem partners.</p>
-              <p>Radyus AI brings a practical understanding of this complexity, helping companies align technical capability with real-world execution.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="partners">
-      <div class="container">
-        <div class="section-wrap wide center">
-          <div class="section-grid">
-            <div class="section-title">How Radyus AI Partners</div>
-            <div class="section-content">
-              <div class="split-band">
-                <div>
-                  <p>Radyus AI begins by understanding how a company’s commercialization engine operates across pipeline, pilots, buyers, and market focus.</p>
-                  <p>From there, practical commercialization frameworks bring clarity and repeatability to enterprise growth.</p>
-                </div>
-                <div class="note-card">
-                  <span class="label">Execution</span>
-                  <p>Execution remains central. Radyus AI engages directly in enterprise sales cycles and strategic deal structuring, supports live deals, sharpens the enterprise narrative, and expands commercial reach through partnerships and market access.</p>
+      <section class="section alt" id="growth">
+        <div class="container">
+          <div class="section-wrap wide float-right">
+            <div class="section-grid">
+              <div class="section-content">
+                <div class="section-title">Why Radyus</div>
+                <p class="lead">For companies building physical AI systems, scaling is inherently more complex.</p>
+                <div class="text-columns">
+                  <p>Selling requires a different approach to how these systems are evaluated, adopted, and integrated into real-world environments.</p>
+                  <p>Radyus understands this environment and helps companies build the sales motion needed to reach enterprise customers.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section" id="why">
-      <div class="container">
-        <div class="section-wrap compact float-right">
-          <div class="section-grid">
-            <div class="section-title">Why Radyus</div>
-            <div class="section-content">
-              <p class="lead">Radyus was founded on the idea that meaningful growth happens when a company expands its radius into new markets, strategic partnerships, and scalable enterprise growth.</p>
-              <p>Expanding thoughtfully requires clarity, execution, and ecosystem alignment. Radyus AI brings together commercial architecture, enterprise execution, physical-world depth, and strategic connectivity through direct, principal-led partnership.</p>
-              <div class="hero-actions">
-                <a class="button secondary" href="#contact">Start a Conversation</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="about">
-      <div class="container">
-        <div class="section-wrap wide center">
-          <div class="section-grid">
-            <div class="section-content">
-              <div class="section-title">About Radyus AI</div>
-              <div class="about-layout">
-                <div class="profile-card">
-                  <div class="profile-photo" aria-label="Photo of Jessica Radow">
-                    <img src="Photoroom_20251210_083243.jpeg" alt="Jessica Radow" class="rounded-circle">
+      <section class="section alt" id="partners">
+        <div class="container">
+          <div class="section-wrap wide center">
+            <div class="section-grid">
+              <div class="section-title">Approach</div>
+              <div class="section-content">
+                <p class="lead">Radyus works directly with founders and leadership teams to strengthen go-to-market strategy, enterprise sales, and partnerships — supporting execution in live deals and strategic opportunities.</p>
+                <div class="services-grid">
+                  <div class="service-item">
+                    <h3>Go-to-market strategy</h3>
+                    <p>Clarifying market focus, customer priorities, and the path to growth.</p>
                   </div>
-                  <div class="profile-name">Jessica Radow</div>
-                  <div class="profile-role">Founder, Radyus AI</div>
-                  <a class="profile-link" href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
-                </div>
-                <div class="about-card">
-                  <p>Radyus AI is a principal-led commercialization practice focused on robotics, Physical AI, and emerging technology operating in complex, real-world environments.</p>
-                  <p>I work directly with founders and leadership teams at pivotal commercial inflection points, helping translate technical innovation into enterprise revenue, strategic partnerships, and scalable growth.</p>
-                  <p>My experience spans over two decades across robotics, Physical AI, and emerging technology platforms, grounded in direct enterprise sales cycles, pilot-to-production expansion, and strategic ecosystem development.</p>
-                  <p>Radyus AI is intentionally structured as a focused, high-engagement practice. Clients work directly with me — not through layers of delegation — with clarity, commercial judgment, and long-term trajectory in mind.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-wrap compact float-left">
-          <div class="section-grid">
-            <div class="section-title">Contact</div>
-            <div class="section-content">
-              <div class="contact-card">
-                <p class="lead">Expand Your Commercial Radius</p>
-                <p>If you are navigating a meaningful commercial inflection point and are ready to scale with clarity and intention, let’s connect.</p>
-                <div class="hero-actions">
-                  <a class="button" href="mailto:jessica@radyusai.com">Book an Intro Conversation</a>
-                </div>
-                <div class="contact-list">
-                  <div>
-                    <span class="label">Email</span>
-                    <a href="mailto:jessica@radyusai.com">jessica@radyusai.com</a>
+                  <div class="service-item">
+                    <h3>Enterprise sales</h3>
+                    <p>Strengthening sales motion, supporting live opportunities, and helping turn traction into repeatable revenue.</p>
                   </div>
-                  <div>
-                    <span class="label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jessica-radow-69b431</a>
+
+                  <div class="service-item">
+                    <h3>Partnerships and strategic introductions</h3>
+                    <p>Developing partnerships, expanding market access, and making targeted introductions across the ecosystem, including investors when relevant.</p>
+                  </div>
+
+                  <div class="service-item">
+                    <h3>Sales team buildout</h3>
+                    <p>Helping companies define roles, shape the early sales organization, and build the structure needed to scale beyond founder-led selling.</p>
+                  </div>
+
+                  <div class="service-item">
+                    <h3>Positioning and market narrative</h3>
+                    <p>Helping complex technologies communicate value clearly to customers, partners, and the market.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="section alt" id="about">
+        <div class="container">
+          <div class="section-wrap wide center">
+            <div class="section-grid">
+              <div class="section-content">
+                <div class="section-title">About Radyus</div>
+                <div class="about-layout">
+                  <div class="profile-card">
+                    <div class="profile-photo">
+                      <img src="images/Photoroom_20251210_083243.jpeg" alt="Jessica Radow" />
+                    </div>
+                    <div class="profile-name">Jessica Radow</div>
+                    <div class="profile-role">Founder, Radyus</div>
+                    <a class="profile-link" href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
+                  </div>
+                  <div class="about-card">
+                    <p>Radyus is a principal-led advisory practice focused on robotics, physical AI, and emerging technology operating in complex, real-world environments.</p>
+                    <p>I work directly with founders and leadership teams at pivotal growth moments, helping translate technical innovation into enterprise revenue, strategic partnerships, and scalable growth.</p>
+                    <p>My experience spans more than two decades across robotics, physical AI, and emerging technology platforms, grounded in direct enterprise sales cycles, pilot-to-production expansion, and strategic ecosystem development.</p>
+                    <p>Radyus is intentionally structured as a focused, high-engagement practice. Clients work directly with me — not through layers of delegation — with clarity, commercial judgment, and long-term trajectory in mind.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-wrap compact float-left">
+            <div class="section-grid">
+              <div class="section-title">Contact</div>
+              <div class="section-content">
+                <div class="contact-card">
+                  <p class="lead">Expand Your Commercial Radius</p>
+                  <p>If you are navigating a meaningful commercial inflection point and are ready to scale with clarity and intention, let’s connect.</p>
+                  <div class="hero-actions">
+                    <a class="button" href="mailto:jessica@radyusai.com">Book an Intro Conversation</a>
+                  </div>
+                  <div class="contact-list">
+                    <div>
+                      <span class="label">Email</span>
+                      <a href="mailto:jessica@radyusai.com">jessica@radyusai.com</a>
+                    </div>
+                    <div>
+                      <span class="label">LinkedIn</span>
+                      <a href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jessica-radow-69b431</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
   <footer class="footer">
-    <div class="container">© <span id="year"></span> Radyus AI. All rights reserved.</div>
+    <div class="container">© <span id="year"></span> Radyus. All rights reserved.</div>
   </footer>
 
   <script>
