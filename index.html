@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Radyus</title>
-  <meta name="description" content="Radyus partners with robotics, physical AI, and emerging technology companies at key commercial inflection points to help them scale with clarity and intention." />
+  <title>Radyus AI</title>
+  <meta name="description" content="Radyus AI partners with robotics, Physical AI, and emerging technology companies at key commercial inflection points to help them scale with clarity and intention." />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
     :root {
       --bg: #fcfcfa;
       --bg-alt: #f4f1eb;
+      --bg-soft: #f8f6f2;
       --card: rgba(255, 255, 255, 0.78);
-      --text: #161616;
+      --text: #161616; /* Dark color for main body text */
       --muted: #5f625d;
       --line: rgba(56, 64, 52, 0.12);
       --accent: #2f5d50;
+      --accent-soft: #dce8e1;
       --warm: #b97a56;
       --max: 1120px;
       --radius: 18px;
@@ -24,20 +24,18 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
         radial-gradient(circle at top left, rgba(220, 232, 225, 0.42), transparent 28%),
         linear-gradient(180deg, #fcfcfa 0%, #fbfaf7 100%);
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
-    h1, h2, h3, p { margin: 0; }
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
 
@@ -64,9 +62,9 @@
     }
 
     .brand {
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
     }
 
@@ -76,7 +74,6 @@
       align-items: center;
       font-size: 0.95rem;
       color: var(--muted);
-      font-weight: 600;
     }
 
     .nav-links a:hover { color: var(--accent); }
@@ -89,7 +86,7 @@
       border-radius: 999px;
       background: var(--accent);
       color: #fff;
-      font-weight: 700;
+      font-weight: 600;
       border: 1px solid var(--accent);
       transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
       box-shadow: 0 14px 32px rgba(47, 93, 80, 0.18);
@@ -102,12 +99,13 @@
     }
 
     .button.secondary {
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.64);
       color: var(--text);
       border-color: rgba(56, 64, 52, 0.1);
       box-shadow: none;
     }
 
+    /* REFINED HERO CSS */
     .hero {
       position: relative;
       padding: 7rem 0 5rem;
@@ -115,9 +113,12 @@
       overflow: hidden;
       display: flex;
       align-items: center;
+      
+      /* NEW OVERLAY: Soft Dark Slate-Blue for contrast */
       background-image:
-        linear-gradient(to bottom, rgba(252, 252, 250, 0.96), rgba(252, 252, 250, 0.86)),
+        linear-gradient(to bottom, rgba(41, 51, 61, 0.65), rgba(41, 51, 61, 0.45)), 
         url('radyus skyline.jpeg');
+      
       background-size: cover;
       background-position: center;
     }
@@ -128,39 +129,39 @@
       padding: 2.5rem 0 1.25rem;
     }
 
-    .hero-panel::after {
-      content: "";
-      position: absolute;
-      right: 4%;
-      top: 0.5rem;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(185, 122, 86, 0.14) 0%, rgba(185, 122, 86, 0) 68%);
-      pointer-events: none;
-    }
-
-    h1 {
-      max-width: 13ch;
-      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-      font-size: clamp(2.35rem, 5.6vw, 4rem);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 1.1rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      text-shadow: 0 1px 0 rgba(255,255,255,0.35);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
     }
 
-    .nowrap {
-      white-space: nowrap;
+    h1, h2, h3, p { margin: 0; }
+
+    /* REFINED TITLE (H1): Soft Gold-Gray derived from sunset */
+    h1 {
+      max-width: 11ch;
+      font-size: clamp(2.85rem, 7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+      
+      /* New Color: Soft, warm light gray */
+      color: #eae1d6;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.25); /* Subtle depth shadow */
     }
 
+    /* REFINED SUBTITLE: Pure White for maximum readability */
     .hero-copy {
       margin-top: 1.5rem;
-      max-width: 700px;
-      font-size: 1.04rem;
-      line-height: 1.72;
-      color: rgba(22, 22, 22, 0.82);
-      font-weight: 500;
+      max-width: 720px;
+      font-size: 1.12rem;
+      
+      /* New Color: High-contrast pure white */
+      color: rgba(255, 255, 255, 0.95); 
     }
 
     .hero-actions {
@@ -170,19 +171,10 @@
       flex-wrap: wrap;
     }
 
-    .section-stack {
-      padding-bottom: 2rem;
-    }
-
     .section {
       padding: 1.4rem 0;
+      border-top: 0;
     }
-
-    .section-stack .section:nth-child(1) { margin-top: 0.25rem; }
-    .section-stack .section:nth-child(2) { margin-top: 2.2rem; }
-    .section-stack .section:nth-child(3) { margin-top: 1rem; }
-    .section-stack .section:nth-child(4) { margin-top: 2.6rem; }
-    .section-stack .section:nth-child(5) { margin-top: 1.4rem; }
 
     .section-wrap {
       position: relative;
@@ -192,6 +184,27 @@
       background: linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.7));
       box-shadow: var(--shadow);
       overflow: hidden;
+    }
+
+    .section-wrap.compact {
+      max-width: 760px;
+    }
+
+    .section-wrap.wide {
+      max-width: 980px;
+    }
+
+    .section-wrap.center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-wrap.float-left {
+      margin-right: auto;
+    }
+
+    .section-wrap.float-right {
+      margin-left: auto;
     }
 
     .section-wrap::before {
@@ -207,45 +220,13 @@
       background: linear-gradient(180deg, rgba(244, 241, 235, 0.92), rgba(255, 255, 255, 0.78));
     }
 
-    .section-wrap.compact { max-width: 760px; }
-    .section-wrap.wide { max-width: 980px; }
-    .section-wrap.center { margin-left: auto; margin-right: auto; }
-    .section-wrap.float-left { margin-right: auto; }
-    .section-wrap.float-right { margin-left: auto; }
-
-    .section-grid { display: block; }
-
-    .section-title {
-      margin-bottom: 0.8rem;
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      text-transform: none;
-      color: var(--text);
-    }
-
-    .lead {
-      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-      font-size: 1rem;
-      line-height: 1.7;
-      letter-spacing: 0;
-      margin-bottom: 0.9rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
-
-    .section-content p {
-      max-width: 68ch;
-    }
-
-    .section-content p + p {
-      margin-top: 1rem;
+    .section-grid {
+      display: block;
     }
 
     .text-columns {
       column-count: 2;
       column-gap: 2rem;
-      margin-top: 1rem;
     }
 
     .text-columns p {
@@ -253,42 +234,71 @@
     }
 
     .mini-highlight {
-      margin-top: 1.35rem;
+      margin-top: 1.4rem;
       padding: 1rem 1.1rem;
       border-radius: 16px;
       background: rgba(220, 232, 225, 0.42);
       border: 1px solid rgba(47, 93, 80, 0.08);
-      font-weight: 700;
+      font-weight: 600;
       color: var(--accent);
     }
 
-    .services-grid {
+    .split-band {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.2rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1.5rem;
+      align-items: start;
     }
 
-    .service-item {
-      padding: 1.1rem 1.15rem;
+    .note-card {
+      padding: 1.25rem;
       border-radius: 18px;
-      background: rgba(255,255,255,0.68);
+      background: rgba(255,255,255,0.62);
       border: 1px solid rgba(56, 64, 52, 0.08);
     }
 
-    .service-item h3 {
-      font-size: 0.98rem;
-      font-weight: 800;
-      margin: 0 0 0.45rem;
-      color: var(--text);
-      letter-spacing: -0.01em;
+    .note-card .label {
+      margin-bottom: 0.6rem;
     }
 
-    .service-item p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.55;
+    .section-title {
       font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-content {
+      max-width: 760px;
+    }
+
+    .section-content p + p {
+      margin-top: 1.25rem;
+    }
+
+    .lead {
+      font-size: 1.5rem;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.2rem;
+    }
+
+    .closing-line {
+      margin-top: 1.4rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--accent);
+    }
+
+    .offset-left {
+      margin-left: -1.75rem;
+    }
+
+    .offset-right {
+      margin-right: -1.75rem;
     }
 
     .about-layout {
@@ -324,7 +334,7 @@
 
     .profile-name {
       margin-top: 0.85rem;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .profile-role {
@@ -344,7 +354,7 @@
       border: 1px solid rgba(56, 64, 52, 0.1);
       background: rgba(255,255,255,0.72);
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .about-card,
@@ -354,6 +364,7 @@
       border: 1px solid rgba(56, 64, 52, 0.08);
       border-radius: var(--radius);
       padding: 1.5rem;
+      box-shadow: none;
     }
 
     .contact-list {
@@ -362,20 +373,20 @@
       gap: 1rem;
     }
 
-    .label {
-      display: block;
-      margin-bottom: 0.3rem;
-      color: var(--muted);
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-weight: 700;
-    }
-
     .contact-list a:hover,
     .profile-link:hover {
       text-decoration: underline;
       text-underline-offset: 0.18em;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
     }
 
     .footer {
@@ -384,25 +395,61 @@
       font-size: 0.92rem;
     }
 
-    @media (max-width: 900px) {
-      .services-grid,
-      .about-layout,
-      .text-columns {
-        grid-template-columns: 1fr;
-        column-count: 1;
-      }
+    .section-stack {
+      padding-bottom: 2rem;
+    }
 
-      .section-wrap.compact,
-      .section-wrap.wide {
-        max-width: none;
-      }
+    .section-stack .section:nth-child(1) {
+      margin-top: 0.25rem;
+    }
 
-      .section-stack .section:nth-child(n) {
-        margin-top: 0.9rem;
+    .section-stack .section:nth-child(2) {
+      margin-top: 2.5rem;
+    }
+
+    .section-stack .section:nth-child(3) {
+      margin-top: 1.2rem;
+    }
+
+    .section-stack .section:nth-child(4) {
+      margin-top: 3rem;
+    }
+
+    .section-stack .section:nth-child(5) {
+      margin-top: 1.6rem;
+    }
+
+    .footer {
+      padding: 2.5rem 0 3rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .offset-left,
+      .offset-right {
+        margin-left: 0;
+        margin-right: 0;
       }
     }
 
     @media (max-width: 840px) {
+      .text-columns {
+        column-count: 1;
+      }
+
+      .split-band {
+        grid-template-columns: 1fr;
+      }
+
+      .section-stack .section:nth-child(n) {
+        margin-top: 0.75rem;
+      }
+
+      .about-layout {
+        grid-template-columns: 1fr;
+      }
+
       .nav {
         flex-wrap: wrap;
       }
@@ -415,6 +462,11 @@
         padding-bottom: 0.25rem;
       }
 
+      .section-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
       .section-wrap {
         padding: 1.6rem;
         border-radius: 22px;
@@ -425,30 +477,32 @@
         min-height: 60vh;
       }
 
-      h1 {
-        font-size: clamp(2.1rem, 9vw, 3.25rem);
-      }
-
       .lead {
-        font-size: 1.35rem;
+        font-size: 1.28rem;
       }
 
-      .hero-panel::after {
-        width: 120px;
-        height: 120px;
-        right: 0;
-      }
+      /* Removed the orange overlay that might interfere with visibility */
+      /* .hero-panel::after {
+        content: "";
+        position: absolute;
+        right: 4%;
+        top: 0.5rem;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(185, 122, 86, 0.14) 0%, rgba(185, 122, 86, 0) 68%);
+        pointer-events: none;
+      } */
     }
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a href="#top" class="brand">Radyus</a>
+      <a href="#top" class="brand">Radyus AI</a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#home">Home</a>
-        <a href="#growth">Why Radyus</a>
-        <a href="#partners">Approach</a>
+        <a href="#growth">Approach</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -458,9 +512,9 @@
   <main id="top">
     <section class="hero" id="home">
       <div class="container hero-panel">
-        <h1>Scaling <span class="nowrap">physical AI</span> and emerging technologies</h1>
+        <h1>Commercializing Physical AI and emerging technologies.</h1>
         <p class="hero-copy">
-          Radyus helps robotics, physical AI, and emerging technology companies strengthen go-to-market strategy, enterprise sales, and partnerships.
+          Radyus AI partners with robotics, Physical AI, and emerging technology companies at key commercial inflection points, bringing strategic clarity and hands-on enterprise execution to help them scale with intention.
         </p>
         <div class="hero-actions">
           <a class="button" href="#contact">Book an Intro Conversation</a>
@@ -474,47 +528,49 @@
         <div class="section-wrap wide float-right">
           <div class="section-grid">
             <div class="section-content">
-              <div class="section-title">Why Radyus</div>
-              <p class="lead">For companies building physical AI systems, scaling is inherently more complex.</p>
+              <div class="section-title">Built for Meaningful Growth Moments</div>
+              <p class="lead">Radyus AI supports companies navigating pivotal commercial transitions, from emerging out of stealth to scaling enterprise revenue and entering new markets.</p>
               <div class="text-columns">
-                <p>Selling requires a different approach to how these systems are evaluated, adopted, and integrated into real-world environments.</p>
-                <p>Radyus understands this environment and helps companies build the sales motion needed to reach enterprise customers.</p>
+                <p>Engagements often begin when traction must become repeatable, when enterprise motion expands beyond founder-led sales, or when pilots must convert into scalable deployment.</p>
+                <p>They also arise as market focus sharpens, partnerships deepen, and complex technology requires a stronger enterprise narrative.</p>
               </div>
+              <p class="mini-highlight">Growth changes the commercial equation. Clarity turns momentum into scale.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    
+    <section class="section" id="physical-ai">
+      <div class="container">
+        <div class="section-wrap compact float-left">
+          <div class="section-grid">
+            <div class="section-title">Commercializing Technology in the Physical World</div>
+            <div class="section-content">
+              <p class="lead">For companies building Physical AI systems, including robotics, embodied AI, and hardware-enabled platforms, commercialization carries added complexity.</p>
+              <p>Deployments unfold in real-world environments where reliability, operational integration, and multi-stakeholder enterprise dynamics shape outcomes.</p>
+              <p>Enterprise adoption requires operational readiness, disciplined pilot-to-production pathways, alignment between executive sponsors and field operators, and the right ecosystem partners.</p>
+              <p>Radyus AI brings a practical understanding of this complexity, helping companies align technical capability with real-world execution.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="section alt" id="partners">
       <div class="container">
         <div class="section-wrap wide center">
           <div class="section-grid">
-            <div class="section-title">Approach</div>
+            <div class="section-title">How Radyus AI Partners</div>
             <div class="section-content">
-              <p class="lead">Radyus works directly with founders and leadership teams to strengthen go-to-market strategy, enterprise sales, and partnerships — supporting execution in live deals and strategic opportunities.</p>
-              <div class="services-grid">
-                <div class="service-item">
-                  <h3>Go-to-market strategy</h3>
-                  <p>Clarifying market focus, customer priorities, and the path to growth.</p>
+              <div class="split-band">
+                <div>
+                  <p>Radyus AI begins by understanding how a company’s commercialization engine operates across pipeline, pilots, buyers, and market focus.</p>
+                  <p>From there, practical commercialization frameworks bring clarity and repeatability to enterprise growth.</p>
                 </div>
-                <div class="service-item">
-                  <h3>Enterprise sales</h3>
-                  <p>Strengthening sales motion, supporting live opportunities, and helping turn traction into repeatable revenue.</p>
-                </div>
-                <div class="service-item">
-                  <h3>Partnerships and strategic introductions</h3>
-                  <p>Developing partnerships, expanding market access, and making targeted introductions across the ecosystem, including investors when relevant.</p>
-                </div>
-                <div class="service-item">
-                  <h3>Sales team buildout</h3>
-                  <p>Helping companies define roles, shape the early sales organization, and build the structure needed to scale beyond founder-led selling.</p>
-                </div>
-                <div class="service-item">
-                  <h3>Positioning and market narrative</h3>
-                  <p>Helping complex technologies communicate value clearly to customers, partners, and the market.</p>
+                <div class="note-card">
+                  <span class="label">Execution</span>
+                  <p>Execution remains central. Radyus AI engages directly in enterprise sales cycles and strategic deal structuring, supports live deals, sharpens the enterprise narrative, and expands commercial reach through partnerships and market access.</p>
                 </div>
               </div>
             </div>
@@ -523,71 +579,312 @@
       </div>
     </section>
 
-    
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-wrap compact float-right">
+          <div class="section-grid">
+            <div class="section-title">Why Radyus</div>
+            <div class="section-content">
+              <p class="lead">Radyus was founded on the idea that meaningful growth happens when a company expands its radius into new markets, strategic partnerships, and scalable enterprise growth.</p>
+              <p>Expanding thoughtfully requires clarity, execution, and ecosystem alignment. Radyus AI brings together commercial architecture, enterprise execution, physical-world depth, and strategic connectivity through direct, principal-led partnership.</p>
+              <div class="hero-actions">
+                <a class="button secondary" href="#contact">Start a Conversation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="section alt" id="about">
       <div class="container">
         <div class="section-wrap wide center">
           <div class="section-grid">
             <div class="section-content">
-              <div class="section-title">About Radyus</div>
+              <div class="section-title">About Radyus AI</div>
               <div class="about-layout">
                 <div class="profile-card">
-                  <div class="profile-photo" aria-label="Photo of Jessica Radow"><img src="data:image/jpeg;base64,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dXV1dXV1dXV1dXWtraysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKz/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2Q==" alt="Jessica Radow" /></div>
-                  <div class="profile-name">Jessica Radow</div>
-                  <div class="profile-role">Founder, Radyus</div>
+                  <div class="profile-photo" aria-label="Photo of Jessica Radow"><img src="data:image/jpeg;base64,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 AN+7d+9e3b95//3v7+fn5+fny/9cXFxcfH6X8Gf/7H8QW8m6+6nJw7j3B+WqH8Tn3i9R4eHn6n8Nv/1jP/7N9fT09PR0dHT0+Pb29vb29vb2+vb29vb29vb29vb29vZ7Nnz5+fn5+fn6+vry8vLy8vLy8vLy8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHy8vLy8vLy8vLy8vLy8vXX19fX19fX19fX19fX19fX19fX19fX19fX1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1dXV1rW1tZWllZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZWVlZ//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// //00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000/head_scbar, bootstrap to Standardise page style. (A single static file content, with simple static elements) -->
+    <title>RADYUS AI | Robotic & Emerging Tech Business Consultancy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap/5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        :root {
+            --primary-color: #313131;
+            --accent-color: #007bff; /* Standard Bootstrap info but for accent */
+        }
+        body {
+            background-color: #f4f4f4;
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+        a {
+            color: var(--accent-color);
+        }
+        .text-accent {
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="50">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-uppercase" href="#top"><strong>RADYUS AI</strong></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#approach">APPROACH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="home">
+        <header class="hero text-center" style="background-image: url('https://via.placeholder.com/1600x600?text=Hero+Image+for+Consultancy+Agency'); padding: 100px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-white">
+                        <h1 class="display-3 text-uppercase">Enterprise commercialization for robotics and emerging technology.</h1>
+                        <p class="lead mt-4 mb-5">
+                          Radyus AI partners with robotics and emerging technology companies at key commercial inflection points, bringing strategic clarity and hands-on enterprise execution to help them scale with intention.
+                        </p>
+                        <a href="#contact" class="btn btn-info btn-lg text-uppercase">Book an Intro Conversation</a>
+                        <a href="#approach" class="btn btn-outline-light btn-lg text-uppercase ms-2">Explore the Approach</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="approach" class="py-5 bg-white">
+            <div class="container py-5">
+                <div class="row mb-5 align-items-center">
+                    <div class="col-md-7 pr-md-5">
+                        <h2 class="mb-4 text-uppercase">Commercializing Technology in the Physical World</h2>
+                        <p class="lead">For companies builds Physical AI systems, including robotics, embodied AI, and hardware-enabled platforms, commercialization carries added complexity.</p>
+                        <p>Deployments unfold in real-world environments where reliability, operational integration, and multi-stakeholder enterprise dynamics shape outcomes.</p>
+                    </div>
+                    <div class="col-md-5 text-center">
+                      <img src="https://via.placeholder.com/150x150?text=Robotics+Icon" alt="Robotics Icon" class="rounded-circle mb-3">
+                    </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-lg-10 mx-auto">
+                      <h3>Operational readiness and detailed process management are vital.</h3>
+                      <p>Radyus AI brings a practical understanding of this complexity, helping companies align technical capability with real-world execution. The following are standard areas to manage during such transitions.</p>
+                      
+                      <div class="accordion" id="accordionStandardAreas">
+                          <div class="accordion-item">
+                              <h4 class="accordion-header" id="headingOne">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                      Operational Readiness
+                                  </button>
+                              </h4>
+                              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionStandardAreas">
+                                  <div class="accordion-body">
+                                      Ensure product, technology, and support can meet enterprise SLAs and performance expectations.
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h4 class="accordion-header" id="headingTwo">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                      Pilot-to-Production Pathways
+                                  </button>
+                              </h4>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionStandardAreas">
+                                  <div class="accordion-body">
+                                      Developing a detailed process to move from successful pilots into multi-site, scalable deployments.
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="accordion-item">
+                              <h4 class="accordion-header" id="headingThree">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                      Ecosystem Alignment
+                                  </button>
+                              </h4>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionStandardAreas">
+                                  <div class="accordion-body">
+                                      Building a network of technology, deployment, and GTM partners to support scale.
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="py-5 bg-light">
+          <div class="container py-5">
+            <h2 class="text-center text-uppercase mb-5">How I Partner</h2>
+            <div class="row">
+              <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body">
+                    <h3 class="h1 text-accent">1.</h3>
+                    <h4>Pipeline and Pilot Execution</h4>
+                    <p>Understanding current pipeline, standard processes, and how pilots convert.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body">
+                    <h3 class="h1 text-accent">2.</h3>
+                    <h4>GTM Strategy & Narrative</h4>
+                    <p>Defining ideal customer, sharpening enterprise story and competitive position.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-4 mb-md-0">
+                <div class="card h-100 border-0 shadow-sm">
+                  <div class="card-body">
+                    <h3 class="h1 text-accent">3.</h3>
+                    <h4>Enterprise Execution</h4>
+                    <p>Engaging directly in sales, partnerships, and complex deal structuring.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="why" class="py-5 bg-white">
+          <div class="container py-5">
+              <div class="row align-items-center">
+                  <div class="col-lg-6 pr-lg-5">
+                      <h2 class="mb-4 text-uppercase">Why Radyus</h2>
+                      <p class="lead">Radyus was founded on the idea that meaningful growth happens when a company extends its radius into new markets, strategic partnerships, and scalable enterprise growth.</p>
+                      <p>Expanding thoughtfully requires clarity, execution, and ecosystem alignment. Radyus AI brings together commercial architecture, enterprise execution, physical-world depth, and strategic connectivity, delivered through direct, principal-led partnership.</p>
+                      <a href="#contact" class="btn btn-info btn-lg text-uppercase mt-4">Start a Conversation</a>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="card h-100 border-0 shadow-sm bg-light">
+                      <div class="card-body p-4">
+                        <ul class="list-unstyled">
+                          <li class="mb-3 d-flex align-items-center">
+                            <img src="https://via.placeholder.com/20x20?text=!" alt="Info Icon" class="me-2 rounded-circle">
+                            <div>
+                              <p class="mb-0"><strong>Deep Physical AI Expertise</strong></p>
+                              <p class="mb-0">Practical experience navigating the intersection of hardware, software, and real-world operations.</p>
+                            </div>
+                          </li>
+                          <li class="mb-3 d-flex align-items-center">
+                            <img src="https://via.placeholder.com/20x20?text=!" alt="Info Icon" class="me-2 rounded-circle">
+                            <div>
+                              <p class="mb-0"><strong>Direct, Principal-Led Engagement</strong></p>
+                              <p class="mb-0">You work directly with the principal, not with layers of delegation, for critical strategic work.</p>
+                            </div>
+                          </li>
+                          <li class="mb-3 d-flex align-items-center">
+                            <img src="https://via.placeholder.com/20x20?text=!" alt="Info Icon" class="me-2 rounded-circle">
+                            <div>
+                              <p class="mb-0"><strong>Clarity, Judgment, and Long-Term Value</strong></p>
+                              <p class="mb-0">Focusing on repeatable, sustainable enterprise motion, not just short-term traction.</p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <section id="about" class="py-5 bg-light">
+          <div class="container py-5">
+            <h2 class="text-center text-uppercase mb-5">About Radyus AI</h2>
+            <div class="row about-layout">
+              <div class="col-md-auto">
+                <div class="profile-card">
+                  <div class="profile-photo">
+                    <img src="https://via.placeholder.com/200x200?text=Jessica+Radow" alt="Jessica Radow" class="rounded-circle">
+                  </div>
+                  <p class="profile-name">Jessica Radow</p>
+                  <p class="profile-role">Founder, Radyus AI</p>
                   <a class="profile-link" href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">View LinkedIn</a>
                 </div>
+              </div>
+              <div class="col-md">
                 <div class="about-card">
-                  <p>Radyus is a principal-led advisory practice focused on robotics, physical AI, and emerging technology operating in complex, real-world environments.</p>
-                  <p>I work directly with founders and leadership teams at pivotal growth moments, helping translate technical innovation into enterprise revenue, strategic partnerships, and scalable growth.</p>
-                  <p>My experience spans more than two decades across robotics, physical AI, and emerging technology platforms, grounded in direct enterprise sales cycles, pilot-to-production expansion, and strategic ecosystem development.</p>
-                  <p>Radyus is intentionally structured as a focused, high-engagement practice. Clients work directly with me — not through layers of delegation — with clarity, commercial judgment, and long-term trajectory in mind.</p>
+                  <p>Radyus AI is a principal-led commercialization practice focused on robotics and emerging technology operating in complex, real-world environments.</p>
+                  <p>I work directly with founders and leadership teams at pivotal commercial inflection points, helping translate technical innovation into enterprise revenue, strategic partnerships, and scalable growth.</p>
+                  <p>My experience spans over two decades across robotics, Physical AI, and emerging technology platforms, grounded in direct enterprise sales cycles, pilot-to-production expansion, and strategic ecosystem development.</p>
+                  <p>Radyus AI is intentionally structured as a focused, high-engagement practice. Clients work directly with me, not through layers of delegation, with clarity, commercial judgment, and long-term trajectory in mind.</p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-wrap compact float-left">
-          <div class="section-grid">
-            <div class="section-title">Contact</div>
-            <div class="section-content">
-              <div class="contact-card">
-                <p class="lead">Expand Your Commercial Radius</p>
-                <p>If you are navigating a meaningful commercial inflection point and are ready to scale with clarity and intention, let’s connect.</p>
-                <div class="hero-actions">
-                  <a class="button" href="mailto:jessica@radyusai.com">Book an Intro Conversation</a>
-                </div>
-                <div class="contact-list">
-                  <div>
-                    <span class="label">Email</span>
-                    <a href="mailto:jessica@radyusai.com">jessica@radyusai.com</a>
+        <section id="contact" class="py-5 bg-white">
+          <div class="container py-5">
+            <h2 class="text-center text-uppercase mb-5">Contact</h2>
+            <div class="row contact-layout">
+              <div class="col-lg-6 mx-auto">
+                  <div class="contact-card">
+                      <h3 class="mb-4">Expand Your Commercial Radius</h3>
+                      <p>If you are navigating a meaningful commercial inflection point and are ready to scale with clarity and intention, let’s connect.</p>
+                      
+                      <form action="#" method="post" class="mt-4">
+                        <div class="mb-3">
+                          <label for="name" class="form-label">Name</label>
+                          <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="message" class="form-label">Message</label>
+                          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-lg text-uppercase">Book an Intro Conversation</button>
+                      </form>
+                      
+                      <div class="contact-list mt-5 border-top pt-4">
+                          <div>
+                              <p class="label">Email</p>
+                              <p><a href="mailto:dummy_email@example.com">dummy_email@example.com</a></p>
+                          </div>
+                          <div>
+                              <p class="label">Social Media</p>
+                              <p><a href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                          </div>
+                      </div>
                   </div>
-                  <div>
-                    <span class="label">LinkedIn</span>
-                    <a href="https://www.linkedin.com/in/jessica-radow-69b431/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jessica-radow-69b431</a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
+        </section>
+        
+    </main>
+
+    <footer class="footer bg-light border-top mt-5">
+        <div class="container text-center">
+            <span class="text-muted">© <span id="year"></span> RADYUS AI. All rights reserved.</span>
         </div>
-      </div>
-    </section>
-    </div>
-  </main>
+    </footer>
 
-  <footer class="footer">
-    <div class="container">© <span id="year"></span> Radyus. All rights reserved.</div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
+                  
