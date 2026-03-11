@@ -453,25 +453,54 @@
 
 @media (max-width: 720px) {
   .approach-section {
-    padding: 1.6rem 0 0.8rem;
+    padding: 1.4rem 0 0.7rem;
+  }
+
+  .approach-wrap {
+    width: min(calc(100% - 1rem), var(--max));
+    gap: 1.2rem;
+  }
+
+  .approach-intro p {
+    max-width: 34ch;
+    font-size: 0.94rem;
+    line-height: 1.6;
   }
 
   .approach-visual-shell {
-    padding: 18px;
-    border-radius: 26px;
+    padding: 12px;
+    border-radius: 22px;
   }
 
   .approach-diagram {
-    width: min(100%, 520px);
+    width: min(100%, 360px);
+  }
+
+  .approach-center {
+    inset: 30%;
+    padding: 14px;
+  }
+
+  .approach-center h3 {
+    font-size: 1.1rem;
+    letter-spacing: 0.06em;
+  }
+
+  .approach-center p {
+    margin-top: 6px;
+    font-size: 0.68rem;
+    line-height: 1.3;
+    max-width: 110px;
   }
 
   .approach-node {
-    width: 152px;
-    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-208px) rotate(calc(-1 * var(--angle)));
+    width: 112px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-148px) rotate(calc(-1 * var(--angle)));
   }
 
   .approach-node h4 {
-    font-size: 0.88rem;
+    font-size: 0.74rem;
+    line-height: 1.14;
   }
 
   .approach-node p {
@@ -479,53 +508,15 @@
   }
 
   .approach-node::before {
-    height: 62px;
-  }
-}
-@media (max-width: 1024px) {
-  .approach-grid {
-    grid-template-columns: 1fr;
+    height: 42px;
+    transform: translate(-50%, 12px);
   }
 
-  .approach-copy-side {
-    max-width: 760px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 720px) {
-  .approach-section {
-    padding: 1.6rem 0 0.8rem;
-  }
-
-  .approach-visual-shell {
-    padding: 18px;
-    border-radius: 26px;
-  }
-
-  .approach-diagram {
-    width: min(100%, 520px);
-  }
-
-  .approach-node {
-    width: 152px;
-    transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-208px) rotate(calc(-1 * var(--angle)));
-  }
-
-  .approach-node h4 {
-    font-size: 0.88rem;
-  }
-
-  .approach-node p {
-    display: none;
-  }
-
-  .approach-node::before {
-    height: 62px;
-  }
-
-  .approach-cards {
-    grid-template-columns: 1fr;
+  .approach-dot {
+    width: 8px;
+    height: 8px;
+    margin-bottom: 9px;
+    box-shadow: 0 0 0 4px rgba(244, 197, 72, 0.14);
   }
 }
 @media (max-width: 840px) {
