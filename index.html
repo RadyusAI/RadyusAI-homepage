@@ -175,7 +175,94 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
+.testimonial-band {
+  padding: 1rem 0 0.25rem;
+}
 
+.testimonial-card {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 2rem 1.8rem;
+  border-radius: 34px 34px 34px 10px;
+  background: linear-gradient(140deg, rgba(38,79,69,0.10), rgba(185,133,98,0.28) 55%, rgba(255,255,255,0.96) 100%);
+  border: 1px solid rgba(185,133,98,0.35);
+  box-shadow: 0 22px 46px rgba(50,40,30,0.12);
+  overflow: hidden;
+}
+
+.testimonial-card::before {
+  content: "“";
+  position: absolute;
+  top: 0.55rem;
+  left: 1rem;
+  font-size: 4.2rem;
+  line-height: 1;
+  color: rgba(185, 133, 98, 0.22);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.testimonial-card::after {
+  content: "";
+  position: absolute;
+  right: -36px;
+  top: -36px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(38, 79, 69, 0.16) 0%, rgba(38, 79, 69, 0) 72%);
+  pointer-events: none;
+}
+
+.testimonial-quote {
+  position: relative;
+  z-index: 1;
+  padding-left: 0.6rem;
+  font-size: 1.18rem;
+  line-height: 1.9;
+  color: var(--text);
+  font-weight: 500;
+  max-width: 720px;
+}
+
+.testimonial-attribution {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.2rem;
+  padding-left: 0.6rem;
+  color: #2c3d36;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 840px) {
+  .testimonial-band {
+    padding: 0.6rem 0 0;
+  }
+
+  .testimonial-card {
+    padding: 1.3rem 1.15rem 1.2rem;
+    border-radius: 24px 24px 24px 12px;
+  }
+
+  .testimonial-card::before {
+    left: 0.75rem;
+    top: 0.45rem;
+    font-size: 3.3rem;
+  }
+
+  .testimonial-quote {
+    padding-left: 0.4rem;
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .testimonial-attribution {
+    padding-left: 0.4rem;
+  }
+}
     .section-stack { padding-bottom: 2rem; }
     .section { padding: 1.4rem 0; }
     .section-stack .section:nth-child(1) { margin-top: 0.35rem; }
@@ -478,7 +565,26 @@
           </div>
         </div>
       </section>
+<section class="section alt" id="growth">
+  ...
+</section>
 
+<section class="testimonial-band" aria-label="Client testimonial">
+  <div class="container">
+    <div class="testimonial-card">
+      <p class="testimonial-quote">
+        “Jess understands the technical depth of NymbleUp’s vision AI platform while also shaping the partnerships and commercial pathways needed to scale it. She has been instrumental in helping us build the right relationships to expand our reach in the U.S. market.”
+      </p>
+      <div class="testimonial-attribution">
+        — Yogesh Bhatt, CEO & Founder, NymbleUp
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="partners">
+  ...
+</section>
       <section class="section alt" id="partners">
         <div class="container">
           <div class="section-wrap wide center">
