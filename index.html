@@ -263,12 +263,19 @@
     padding-left: 0.4rem;
   }
 }
-    .section-stack { padding-bottom: 2rem; }
-    .section { padding: 1.4rem 0; }
-    .section-stack .section:nth-child(1) { margin-top: 0.35rem; }
-    .section-stack .section:nth-child(2) { margin-top: 2rem; }
-    .section-stack .section:nth-child(3) { margin-top: 1.1rem; }
-    .section-stack .section:nth-child(4) { margin-top: 2.2rem; }
+.section-stack { padding-bottom: 2rem; }
+
+.section {
+  padding: 1rem 0;
+}
+
+.section + .section {
+  margin-top: 0.6rem;
+}
+
+.testimonial-band {
+  padding: 0.2rem 0;
+}
 
     .section-wrap {
       position: relative;
